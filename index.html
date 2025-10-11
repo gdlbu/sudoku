@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Solver | 专业在线数独解答器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-icon">🧩</span>
+      <h1>专业数独解答器</h1>
+    </div>
+    <p class="subtitle">输入题面，点击“求解”，几秒内获得精准答案。</p>
+  </header>
+
+  <main class="app-main">
+    <section class="board-wrapper">
+      <table class="sudoku-board" aria-label="Sudoku board">
+        <tbody>
+          <!-- Rows will be generated dynamically by solver.js -->
+        </tbody>
+      </table>
+      <div class="board-actions">
+        <button id="load-example" type="button" class="btn secondary">加载示例</button>
+        <button id="clear-board" type="button" class="btn ghost">清空棋盘</button>
+        <button id="solve-board" type="button" class="btn primary">求解</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="helper-panel">
+      <h2>操作指南</h2>
+      <ol>
+        <li>点击棋盘格，输入 1-9 的数字；留空表示该格未知。</li>
+        <li>点击“求解”开始自动求解；求解过程中会实时展示填数过程。</li>
+        <li>如遇到无解或输入冲突，系统会提示您检查题面。</li>
+      </ol>
+      <div class="tips">
+        <h3>功能亮点</h3>
+        <ul>
+          <li>智能冲突检测，输入无效数字会实时高亮。</li>
+          <li>MRV + 回溯算法，高效求解绝大部分数独。</li>
+          <li>支持加载示例题目，方便快速体验。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Made with ❤️ 为数独爱好者提供的高效工具</p>
+  </footer>
+
+  <script src="solver.js" type="module"></script>
+</body>
+</html>
