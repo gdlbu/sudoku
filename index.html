@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="专业的在线数独求解器，支持实时校验、智能回溯与深色模式。">
+  <title>Sudoku Solver | 专业在线数独解答器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-icon" aria-hidden="true">🧩</div>
+      <div>
+        <h1>专业数独解答器</h1>
+        <p class="subtitle">高效算法 × 友好交互 × 暗黑模式支持</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="toggle-theme" class="btn icon" type="button" aria-label="切换深浅模式">☀️</button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="board-section" aria-labelledby="board-title">
+      <div class="panel">
+        <div class="panel-header">
+          <h2 id="board-title">棋盘操作</h2>
+          <p class="panel-desc">点击格子输入 1-9，空格表示未知。实时冲突检测帮您保障题面合法。</p>
+        </div>
+        <div class="board-container">
+          <table class="sudoku-board" aria-label="Sudoku board">
+            <tbody>
+              <!-- Rows will be generated dynamically by solver.js -->
+            </tbody>
+          </table>
+        </div>
+        <div class="board-actions">
+          <button id="load-example" type="button" class="btn secondary">加载经典示例</button>
+          <button id="load-challenge" type="button" class="btn accent">加载挑战题</button>
+          <button id="clear-board" type="button" class="btn ghost">清空棋盘</button>
+          <button id="solve-board" type="button" class="btn primary">开始求解</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <aside class="info-section" aria-labelledby="info-title">
+      <div class="panel">
+        <div class="panel-header">
+          <h2 id="info-title">使用指南</h2>
+          <p class="panel-desc">结合 MRV、单元推理与深度回溯，轻松驾驭高难度数独。</p>
+        </div>
+        <div class="guide">
+          <ol>
+            <li>输入题目或点击“加载示例/挑战题”体验预设题面。</li>
+            <li>点击“开始求解”触发演算，可实时观察推理过程。</li>
+            <li>如提示冲突，请调整题面；若无解，可能是题目存在矛盾或多解。</li>
+          </ol>
+        </div>
+        <div class="features">
+          <h3>功能亮点</h3>
+          <ul>
+            <li>交替着色的九宫格，让结构一目了然。</li>
+            <li>高级策略加速推理，难题也能稳健破解。</li>
+            <li>跟随系统或手动切换暗色主题，护眼更沉浸。</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <h3>关于作者</h3>
+          <p>本工具由 <strong>@山东好旱</strong> 打造，致力于为数独爱好者提供专业体验。</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="app-footer">
+    <p>Made with ❤️ 为全球数独玩家打造的智能求解助手 · 2024</p>
+  </footer>
+
+  <script src="solver.js" type="module"></script>
+</body>
+</html>
